@@ -6,6 +6,7 @@ import { Image } from './Image';
 import { Work } from './Work';
 
 export type Hero = {
+  response: string,
   id: string,
   name: string,
   appearance: Appearance,

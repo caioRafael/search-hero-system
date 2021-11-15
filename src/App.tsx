@@ -7,7 +7,7 @@ function App() {
   const [hero, setHero] = useState<Hero>();
 
   async function getData() {
-    const response = await api.get("65");
+    const response = await api.get("320");
 
     setHero(response.data);
     console.log(response.data);
@@ -39,6 +39,24 @@ function App() {
           <p>Alignment: {hero.biography.alignment}</p>
           <p>Alter Egos: {hero.biography['alter-egos']}</p>
           <p>Fist Appearance: {hero.biography['first-appearance']}</p>
+          <label htmlFor="aliases">Aliases</label>
+          <ul id="aliases">
+            {hero.biography.aliases.map((a, index) => (
+              <li key={index} >{a}</li>
+            ))}
+          </ul>
+          <br />
+          <strong>Connections:</strong>
+          <p>Group Affiliation: {hero.connections['group-affiliation']}</p>
+          <p>Relatives: {hero.connections.relatives}</p>
+          <br />
+          <strong>Powerstats:</strong>
+          <p>Combat: {hero.powerstats.combat}</p>
+          <p>Durability: {hero.powerstats.durability}</p>
+          <p>Intelligence: {hero.powerstats.intelligence}</p>
+          <p>Power: {hero.powerstats.power}</p>
+          <p>Speed: {hero.powerstats.speed}</p>
+          <p>Strength: {hero.powerstats.strength}</p>
         </>
       )}
     </div>
