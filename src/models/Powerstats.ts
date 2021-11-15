@@ -6,3 +6,14 @@ export type Powerstats = {
   speed: string,
   strength: string,
 }
+
+export function getNewPowerstats(): Powerstats {
+  return {
+    combat: "",
+    durability: "",
+    intelligence: "",
+    power: "",
+    speed: "",
+    strength: "",
+  }
+}

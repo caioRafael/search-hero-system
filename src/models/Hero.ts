@@ -1,9 +1,9 @@
-import { Powerstats } from './Powerstats';
-import { Connections } from './Connections';
-import { Appearance } from "./Appearance";
-import { Biography } from "./Biography";
-import { Image } from './Image';
-import { Work } from './Work';
+import { Powerstats, getNewPowerstats } from './Powerstats';
+import { Connections, getNewConnections } from './Connections';
+import { Appearance, getNewAppearance } from "./Appearance";
+import { Biography, getNewBiography } from "./Biography";
+import { getNewImage, Image } from './Image';
+import { getNewWork, Work } from './Work';
 
 export type Hero = {
   response: string,
@@ -15,4 +15,18 @@ export type Hero = {
   image: Image,
   powerstats: Powerstats,
   work: Work,
+}
+
+export function getNewHero(): Hero {
+  return {
+    response: "",
+    id: "",
+    name: "",
+    appearance: getNewAppearance(),
+    biography: getNewBiography(),
+    connections: getNewConnections(),
+    image: getNewImage(),
+    powerstats: getNewPowerstats(),
+    work: getNewWork(),
+  }
 }

@@ -7,3 +7,15 @@ export type Biography = {
   "place-of-birth": string,
   publisher: string,
 }
+
+export function getNewBiography(): Biography {
+  return {
+    aliases: [],
+    alignment: "",
+    "alter-egos": "",
+    "first-appearance": "",
+    "full-name": "",
+    "place-of-birth": "",
+    publisher: "",
+  }
+}
