@@ -7,7 +7,7 @@ import { getNewWork, Work } from './Work';
 
 export type Hero = {
   response: string,
-  id: string,
+  id: number,
   name: string,
   appearance: Appearance,
   biography: Biography,
@@ -20,7 +20,7 @@ export type Hero = {
 export function getNewHero(): Hero {
   return {
     response: "",
-    id: "",
+    id: 0,
     name: "",
     appearance: getNewAppearance(),
     biography: getNewBiography(),

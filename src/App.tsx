@@ -1,10 +1,10 @@
-import { HeroPage } from './components/HeroPage';
+import { ListHeroPage } from './components';
 import { HeroProvider } from './context/HeroContext';
 
 function App() {
   return (
     <HeroProvider>
-      <HeroPage />
+      <ListHeroPage />
     </HeroProvider>
   );
 }

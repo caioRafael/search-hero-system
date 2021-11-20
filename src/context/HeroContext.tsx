@@ -1,9 +1,9 @@
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { getNewHero, Hero } from '../models/Hero';
-import api from '../services/api';
+import { getListHero } from '../services/heroService';
 
 interface HeroContextData {
-  hero: Hero;
+  listHeros: Hero[];
   next: () => void;
 }
 
@@ -14,30 +14,28 @@ interface HeroProviderProps {
 export const HeroContext = createContext({} as HeroContextData)
 
 export function HeroProvider({ children }: HeroProviderProps) {
-  const [hero, setHero] = useState<Hero>(getNewHero());
-  const [id, setId] = useState(1);
+  const [listHeros, setListHeros] = useState<Hero[]>([getNewHero()])
 
-
-  const next = () => {
-    if (!!parseInt(hero.id) && parseInt(hero.id) <= 731) {
-      const idHero = parseInt(hero.id);
-
-      setId(idHero + 1);
-    }
+  const next = async () => {
+    await getListHeros()
   }
 
-  useEffect(() => {
-    async function getData() {
-      const response = await api.get(`/${id}`);
 
-      setHero(response.data);
-    }
-    getData();
-  }, [id])
+  async function getListHeros() {
+    const list = await getListHero(listHeros);
+    console.log(list);
+    setListHeros(list);
+  }
+  useEffect(() => {
+
+    getListHeros();
+  }, [])
+
+
   return (
     <HeroContext.Provider value={{
-      hero,
-      next
+      next,
+      listHeros
     }}>
       {children}
     </HeroContext.Provider>
