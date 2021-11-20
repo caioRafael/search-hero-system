@@ -1,29 +1,32 @@
 import { useEffect, useState } from 'react';
 import { getNewHero, Hero } from './models/Hero';
-import { useAppDispatch, useAppSelector } from './redux/hook';
-import { nextIdHero, selectHero } from './redux/slice/heroSlice';
 import api from './services/api';
 
 
 function App() {
-  const { id } = useAppSelector(selectHero)
-  const dispatch = useAppDispatch();
-
   const [hero, setHero] = useState<Hero>(getNewHero());
+  const [id, setId] = useState(1);
 
-  async function getData() {
-    const response = await api.get(`/${id}`);
+  const next = () => {
+    if (!!parseInt(hero.id) && parseInt(hero.id) <= 731) {
+      const idHero = parseInt(hero.id);
 
-    setHero(response.data);
-    console.log(response.data);
+      setId(idHero + 1);
+    }
   }
+
   useEffect(() => {
+    async function getData() {
+      const response = await api.get(`/${id}`);
+
+      setHero(response.data);
+    }
     getData();
   }, [id])
 
   return (
     <div className="App">
-      <button onClick={() => dispatch(nextIdHero())}>Next</button>
+      <button onClick={next}>Next</button>
       <h1>olá mundo</h1>
       {hero && (
         <>
