@@ -41,4 +41,34 @@ section{
     height:340px;
     border-radius: 10px;
   }
+
+  .power{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 250px;
+    height: 100px;
+    padding: 5px;
+    z-index: -10;
+
+    background: var(--dark);
+    border: solid 1px var(--green);
+    border-radius: 5px;
+
+    margin-top: -105px;
+
+    span{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &:hover{
+    background: var(--green);
+    .power{
+      z-index: 10;
+    }
+  }
 }
