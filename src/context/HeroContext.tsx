@@ -27,7 +27,6 @@ export function HeroProvider({ children }: HeroProviderProps) {
     setListHeros(list);
   }
   useEffect(() => {
-
     getListHeros();
   }, [])
 

@@ -1,5 +1,7 @@
-import ListHeroPage from './ListHeroPage'
+import HeroPage from './HeroPage'
+import ListHero from './ListHero'
 
 export {
-  ListHeroPage
+  HeroPage,
+  ListHero
 }

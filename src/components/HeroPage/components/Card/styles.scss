@@ -1,0 +1,44 @@
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+
+  margin: 15px;
+  padding: 20px;
+
+  background: var(--gray);
+  border-radius: 15px;
+
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 260px;
+    height:30px;
+
+    div{
+      width: 13%;
+      height: 100%;
+      padding: 5px;
+      background: var(--dark);
+      border-radius: 5px;
+
+      display: flex;
+      justify-content: center;
+
+      margin-bottom: 15px;
+
+      &:nth-child(2){
+        width: 85%;
+      }
+    }
+  }
+
+  img{
+    width: 260px;
+    height:340px;
+    border-radius: 10px;
+  }
+}
