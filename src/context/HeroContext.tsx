@@ -23,7 +23,6 @@ export function HeroProvider({ children }: HeroProviderProps) {
 
   async function getListHeros() {
     const list = await getListHero(listHeros);
-    console.log(list);
     setListHeros(list);
   }
   useEffect(() => {

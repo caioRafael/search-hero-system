@@ -15,7 +15,6 @@ export async function getListHero(list: Hero[]): Promise<Hero[]> {
 
     if (list[0].id === 0) {
       list.splice(list.indexOf(getNewHero()), 1);
-      console.log(list)
     }
     for (let i = id; i <= limit; i++) {
       let hero: Hero;

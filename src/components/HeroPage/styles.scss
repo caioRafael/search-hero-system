@@ -16,5 +16,11 @@
     font: 700 20px "Roboto", sans-serif;
 
     border-radius: 10px;
+
+    &:hover{
+      background-image: linear-gradient(to bottom right, var(--green), var(--secundary-green));
+      color: var(--text);
+      transition: 0.2s;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { useHero } from "../../hooks/useHero";
-import { Card } from "../HeroPage/components";
+import { Card } from "./components";
 
 import './styles.scss'
 
